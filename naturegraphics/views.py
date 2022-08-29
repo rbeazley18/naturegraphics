@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def IndexView(request):
     return render(request, 'naturegraphics/index.html')
+
+def ContactView(request):
+    return render(request, 'naturegraphics/contact.html')
