@@ -1,1 +1,21 @@
-hi
+{% extends 'naturegraphics/base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Contact Us</title>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="col-md-8 mx-auto p-5 mb-2">
+        <h3 class="mb-3">Contact Us</h3>
+        <div class="form-group">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

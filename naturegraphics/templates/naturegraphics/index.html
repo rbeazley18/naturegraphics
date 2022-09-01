@@ -7,33 +7,37 @@
 
 {% block body %}
 <style>
-#headline {
-    background-color: rgba(131, 131, 131, 0.719);
-}
+    #headline {
+        background-color: rgb(156, 52, 52);
+    }
 
-h1 {
-    color: white;
-}
+    #header-desription {
+        font-size: x-large;
+    }
+
+    h1 {
+        color: rgb(255, 255, 255);
+        font-family: 'DM Serif Display', serif;
+    }
 </style>
 
 <body>
-
     <div>
-        <br>
-        <br>
-        <div class="container-fluid p-5">
-            <div class="row text-light rounded-3 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center justify-content-evenly mx-auto" id="headline">
+        <div class="container-fluid p-0" id="headline">
+            <div class="row text-light pb-lg-0 pt-lg-5 align-items-center justify-content-evenly mx-auto">
                 <div class="col-lg-5 p-3 p-lg-5 pt-lg-3">
-                    <h1 class="display-2 fw-bold ">Nature Graphics</h1>
-                    <p class="lead">Nature Graphics is a graphic design firm specializing in the planning, writing,
+                    <img class="d-block inline" src="{% static 'naturegraphics/TrilliumColor.jpg' %}">
+                    <h1 class="display-1 ">Nature Graphics</h1>
+                    <p class="lead" id="header-desription">Nature Graphics is a graphic design firm specializing in the planning, writing,
                         design,
                         fabrication and installation of interpretive displays and wayfinding signage. Established in
                         2003,
                         we are experienced enough to handle the largest of wayside exhibit projects yet eager enough to
                         welcome even the smallest projects.</p>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-                        <button type="button" class="btn btn-secondary btn-lg px-4 me-md-2 fw-bold">Contact Us</button>
-                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+                    <div class="d-grid gap-2 d-md-flex justify-content-start mb-4 mb-lg-3">
+                        <a type="button" class="btn btn-light btn-lg shadow-lg px-4 me-md-2"
+                            href="{% url 'naturegraphics:contact' %}">Contact Us</a>
+                        <button type="button" class="btn btn-light shadow-lg btn-lg px-4">Default</button>
                     </div>
                 </div>
                 <div class="col-lg-4 p-0 mb-5 shadow-lg ">
@@ -93,57 +97,71 @@ h1 {
         <!-- <div class="col-lg-4 p-0 shadow-lg">
             <img class="rounded" src="{% static 'naturegraphics/display2.webp' %}" alt="" width="auto" height="500">
         </div> -->
-        <div class="row m-5 p-4  justify-content-evenly align-self-center">
-            <div class="col-lg-3 p-5" style="width: 25rem;">
-                <div class="h-100 text-center">
-                    <img src="{% static 'naturegraphics/profile1.webp' %}" class="img-fluid rounded-circle"
-                        alt="profile pic">
-                    <div class="">
-                        <h5 class="mt-3">The Owner</h5>
-                        <p class="mt-1">Lea Beazley understands first-hand the importance of effective
-                            interpretive
-                            displays in parks. Before starting her own company, she worked as a park ranger and
-                            district
-                            interpretation & education specialist for North Carolina State Parks. She saw how
-                            poorly
-                            designed interpretive displays and wayfinding signage detract from the visitor
-                            experience
-                            while well-designed displays and signage enhance it.</p>
-                        <p class="">-Lea Beazley</p>
+
+
+        <div class="row justify-content-evenly p-lg-5">
+            <div class="col my-3 mx-3" style="min-width: 23rem; max-width: 30rem;">
+                <div class="h-100">
+                    <div class="text-center my-3">
+                        <img class=" rounded-circle" style="max-width:80%; height:auto; min-width: 20rem;"
+                            src="{% static 'naturegraphics/profile1.webp' %}">
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-3 p-5" style="width: 25rem;">
-                <div class="h-100 text-center">
-                    <img src="{% static 'naturegraphics/profile1.webp' %}" class="img-fluid rounded-circle"
-                        alt="profile pic">
-                    <div class="">
-                        <h5 class="">Our Mission</h5>
-                        <p class="">To create interpretive displays, wayfinding signage, and park information displays
-                            that are helpful, engaging, attractive, ADA-accessible, durable and affordable while giving
-                            all of our clients the personal attention they deserve.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 p-5" style="width: 25rem;">
-                <div class="h-100 text-center">
-                    <img src="{% static 'naturegraphics/display1.webp' %}" class="rounded-circle" height="300" width="300"
-                        alt="profile pic">
                     <div class="text-center">
-                        <h5>The Owner</h5>
-                        <p class="">Lea Beazley understands first-hand the importance of effective
-                            interpretive
-                            displays in parks. Before starting her own company, she worked as a park ranger and
-                            district
-                            interpretation & education specialist for North Carolina State Parks. She saw how
-                            poorly
-                            designed interpretive displays and wayfinding signage detract from the visitor
-                            experience
-                            while well-designed displays and signage enhance it.</p>
+                        <div>
+                            <h3 class="">The Owner</h3>
+                            <p class="lead">Lea Beazley understands first-hand the importance of effective
+                                interpretive
+                                displays in parks. Before starting her own company, she worked as a park ranger and
+                                district
+                                interpretation & education specialist for North Carolina State Parks. She saw how
+                                poorly
+                                designed interpretive displays and wayfinding signage detract from the visitor
+                                experience
+                                while well-designed displays and signage enhance it.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="col my-3 mx-3" style="min-width: 23rem; max-width: 30rem;">
+                <div class="h-100">
+                    <div class="text-center my-3">
+                        <img class=" rounded-circle" style="max-width:80%; height:auto; min-width: 20rem;"
+                            src="{% static 'naturegraphics/display2.webp' %}">
+                    </div>
+                    <div class="d-flex flex-column justify-content-between text-center">
+                        <div>
+                            <h3 class="">Our Mission</h3>
+                            <p class="lead">To create interpretive displays, wayfinding signage, and park information
+                                displays
+                                that are helpful, engaging, attractive, ADA-accessible, durable and affordable while
+                                giving
+                                all of our clients the personal attention they deserve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col my-3 mx-3" style="min-width: 23rem; max-width: 30rem;">
+                <div class="h-100">
+                    <div class="text-center my-3">
+                        <img class=" rounded-circle" style="max-width:80%; height:auto; min-width: 20rem;"
+                            src="{% static 'naturegraphics/display2.webp' %}">
+                    </div>
+                    <div class="d-flex flex-column justify-content-between text-center">
+                        <div>
+                            <h3 class="">Our Mission</h3>
+                            <p class="lead">To create interpretive displays, wayfinding signage, and park information
+                                displays
+                                that are helpful, engaging, attractive, ADA-accessible, durable and affordable while
+                                giving
+                                all of our clients the personal attention they deserve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
     </div>
 </body>
 {% endblock %}
