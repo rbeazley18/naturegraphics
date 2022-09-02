@@ -2,7 +2,9 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views import generic
 from .forms import ContactForm
+from .models import Project
 
 
 def IndexView(request):
@@ -24,5 +26,12 @@ def ContactView(request):
     context = {'form': form}
     return render(request, 'naturegraphics/contact.html', context)
 
+class ProjectsView(generic.ListView):
+    model = Project
+    template_name = 'naturegraphics/projects.html'
+    context_object_name = 'project_images'
+
+    def get_queryset(self):
+        return Project.objects.all().order_by('order')
     
 

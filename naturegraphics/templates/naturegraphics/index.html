@@ -18,6 +18,16 @@
     h1 {
         color: rgb(255, 255, 255);
         font-family: 'DM Serif Display', serif;
+        
+    }
+
+    h3 {
+        font-family: 'DM Serif Display', serif;
+        font-size: xx-large;
+    }
+
+    p {
+        font-family: 'Nunito Sans', sans-serif;
     }
 </style>
 
@@ -26,14 +36,21 @@
         <div class="container-fluid p-0" id="headline">
             <div class="row text-light pb-lg-0 pt-lg-5 align-items-center justify-content-evenly mx-auto">
                 <div class="col-lg-5 p-3 p-lg-5 pt-lg-3">
-                    <img class="d-block inline" src="{% static 'naturegraphics/TrilliumColor.jpg' %}">
-                    <h1 class="display-1 ">Nature Graphics</h1>
-                    <p class="lead" id="header-desription">Nature Graphics is a graphic design firm specializing in the planning, writing,
-                        design,
-                        fabrication and installation of interpretive displays and wayfinding signage. Established in
-                        2003,
-                        we are experienced enough to handle the largest of wayside exhibit projects yet eager enough to
-                        welcome even the smallest projects.</p>
+                    
+                        <h1 class="display-1"><img class="pull-left rounded-circle mr-3"
+                                style="width: 12rem; height: 12rem;"
+                                src="{% static 'naturegraphics/TrilliumColor.jpg' %}"> Nature Graphics</h1>
+                    
+                        <p class="mt-5 mb-4 lead" id="header-desription">Nature Graphics is a graphic design firm
+                            specializing in
+                            the planning, writing,
+                            design,
+                            fabrication and installation of interpretive displays and wayfinding signage. Established in
+                            2003,
+                            we are experienced enough to handle the largest of wayside exhibit projects yet eager enough
+                            to
+                            welcome even the smallest projects.</p>
+                    
                     <div class="d-grid gap-2 d-md-flex justify-content-start mb-4 mb-lg-3">
                         <a type="button" class="btn btn-light btn-lg shadow-lg px-4 me-md-2"
                             href="{% url 'naturegraphics:contact' %}">Contact Us</a>
@@ -106,8 +123,8 @@
                         <img class=" rounded-circle" style="max-width:80%; height:auto; min-width: 20rem;"
                             src="{% static 'naturegraphics/profile1.webp' %}">
                     </div>
-                    <div class="text-center">
-                        <div>
+                    <div class="text-center mt-4">
+                        <div class="">
                             <h3 class="">The Owner</h3>
                             <p class="lead">Lea Beazley understands first-hand the importance of effective
                                 interpretive
@@ -129,8 +146,8 @@
                         <img class=" rounded-circle" style="max-width:80%; height:auto; min-width: 20rem;"
                             src="{% static 'naturegraphics/display2.webp' %}">
                     </div>
-                    <div class="d-flex flex-column justify-content-between text-center">
-                        <div>
+                    <div class="text-center mt-4">
+                        <div class="">
                             <h3 class="">Our Mission</h3>
                             <p class="lead">To create interpretive displays, wayfinding signage, and park information
                                 displays
@@ -147,8 +164,8 @@
                         <img class=" rounded-circle" style="max-width:80%; height:auto; min-width: 20rem;"
                             src="{% static 'naturegraphics/display2.webp' %}">
                     </div>
-                    <div class="d-flex flex-column justify-content-between text-center">
-                        <div>
+                    <div class="text-center mt-4">
+                        <div class="">
                             <h3 class="">Our Mission</h3>
                             <p class="lead">To create interpretive displays, wayfinding signage, and park information
                                 displays
