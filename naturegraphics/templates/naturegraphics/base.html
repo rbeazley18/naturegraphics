@@ -32,9 +32,15 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="#">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'naturegraphics:projects' %}">Projects</a>
-                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
+                        <ul class="dropdown-menu" data-bs-popper="static">
+                          <li><a class="dropdown-item" href="{% url 'naturegraphics:culturalhistory' %}">Cultural History</a></li>
+                          <li><a class="dropdown-item" href="{% url 'naturegraphics:naturalhistory' %}">Natural History</a></li>
+                          <li><a class="dropdown-item" href="{% url 'naturegraphics:parkinformation' %}">Park Information</a></li>
+                          <li><a class="dropdown-item" href="{% url 'naturegraphics:resourcemanagement' %}">Resource Management</a></li>
+                        </ul>
+                      </li>
                 </ul>
             </div>
         </div>

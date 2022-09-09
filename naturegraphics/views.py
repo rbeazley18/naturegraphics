@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import generic
 from .forms import ContactForm
-from .models import Project
+from .models import Project1, Project2, Project3, Project4
 
 
 def IndexView(request):
@@ -26,12 +26,35 @@ def ContactView(request):
     context = {'form': form}
     return render(request, 'naturegraphics/contact.html', context)
 
-class ProjectsView(generic.ListView):
-    model = Project
-    template_name = 'naturegraphics/projects.html'
-    context_object_name = 'project_images'
+class Project1View(generic.ListView):
+    model = Project1
+    template_name = 'naturegraphics/project1.html'
+    context_object_name = 'project1'
 
     def get_queryset(self):
-        return Project.objects.all().order_by('order')
-    
+        return Project1.objects.all().order_by('order')
 
+class Project2View(generic.ListView):
+    model = Project2
+    template_name = 'naturegraphics/project2.html'
+    context_object_name = 'project2'
+
+    def get_queryset(self):
+        return Project2.objects.all().order_by('order')
+
+class Project3View(generic.ListView):
+    model = Project3
+    template_name = 'naturegraphics/project3.html'
+    context_object_name = 'project3'
+
+    def get_queryset(self):
+        return Project3.objects.all().order_by('order')
+
+class Project4View(generic.ListView):
+    model = Project4
+    template_name = 'naturegraphics/project4.html'
+    context_object_name = 'project4'
+
+    def get_queryset(self):
+        return Project4.objects.all().order_by('order')
+    
