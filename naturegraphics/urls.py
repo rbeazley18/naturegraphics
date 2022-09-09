@@ -5,7 +5,8 @@ from . import views
 app_name = 'naturegraphics'
 urlpatterns = [
     path('', views.IndexView, name='index'),
-    path('contact', views.ContactView, name='contact'),
-    path('projects', views.ProjectsView.as_view(), name='projects'),
-    path('category/<str:cats>/', views.CategoryView, name='category')
+    path('contact/', views.ContactView, name='contact'),
+    path('projects/', views.ProjectsView.as_view(), name='projects'),
+    path('category/', views.category_list, name='category_list'),
+    path('category/<int:pk>/', views.category_detail, name='category_detail')
     ]

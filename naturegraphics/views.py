@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 from django.views import generic
+from django.shortcuts import get_object_or_404
 from .forms import ContactForm
 from .models import Project, Category
 
@@ -35,11 +36,12 @@ class ProjectsView(generic.ListView):
     def get_queryset(self):
         return Project.objects.all().order_by('order')
 
-def CategoryView(request, cats):
-    category_projects = Project.objects.filter(category=cats)
-    context = {'cats': cats, 'category_projects': category_projects}
+def category_list(request):
+    categories = Category.objects.all()
 
-    return render(request, 'naturegraphics/categories.html', context)
+    return render (request, 'naturegraphics/category_list.html', {'categories': categories})
 
-    
+def category_detail(request, pk):
+    category = get_object_or_404(Category, pk=pk)
 
+    return render(request, 'naturegraphics/category_detail.html', {'category': category})

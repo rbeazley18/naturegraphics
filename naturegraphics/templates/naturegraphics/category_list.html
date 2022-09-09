@@ -1,0 +1,9 @@
+{% block body %}
+<h1></h1>
+
+{% for cats in categories %}
+<a type="button" class="btn btn-light btn-lg shadow-lg px-4 me-md-2" href="{% url 'naturegraphics:category_detail' %}">{{ cats }}</a>
+
+{% endfor %}
+
+{% endblock %}

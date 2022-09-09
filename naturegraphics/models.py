@@ -16,20 +16,20 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
-        return reverse('index')
-
+    
 
 
 class Project(models.Model):
     order = models.IntegerField(default='1')
-    category = models.ForeignKey(Category, default=1, on_delete=models.CASCADE)
-    # title = description = models.CharField(max_length=255, blank=True)
+    category = models.ForeignKey(Category, verbose_name='Category', on_delete=models.CASCADE)
+    # title = models.CharField(max_length=255, blank=True)
     description = models.CharField(max_length=255, blank=True)
     project_image = models.ImageField(null=True, blank=True, upload_to='images/')
 
     def __str__(self):
         return self.description
+
+    
 
 
 class Contact(models.Model):
