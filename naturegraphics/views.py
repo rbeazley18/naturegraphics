@@ -1,10 +1,11 @@
+from unicodedata import category, name
 from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from django.views import generic
 from .forms import ContactForm
-from .models import Project
+from .models import Project, Category
 
 
 def IndexView(request):
@@ -33,5 +34,12 @@ class ProjectsView(generic.ListView):
 
     def get_queryset(self):
         return Project.objects.all().order_by('order')
+
+def CategoryView(request, cats):
+    category_projects = Project.objects.filter(category=cats)
+    context = {'cats': cats, 'category_projects': category_projects}
+
+    return render(request, 'naturegraphics/categories.html', context)
+
     
 

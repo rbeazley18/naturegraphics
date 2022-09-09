@@ -33,7 +33,9 @@
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 {% for project in project_images %}
+                
                 {% if forloop.first %}
+                <h1 class="">{{ project.category }}</h1>
                 <div class="carousel-item active">
                     <img src="{{ project.project_image.url }}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block lead">
@@ -41,6 +43,7 @@
                     </div>
                 </div>
                 {% else %}
+                <h1 class="mx-auto">{{ project.category }}</h1>
                 <div class="carousel-item">
                     <img src="{{ project.project_image.url }}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">

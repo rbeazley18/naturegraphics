@@ -6,5 +6,6 @@ app_name = 'naturegraphics'
 urlpatterns = [
     path('', views.IndexView, name='index'),
     path('contact', views.ContactView, name='contact'),
-    path('projects', views.ProjectsView.as_view(), name='projects')
-]
+    path('projects', views.ProjectsView.as_view(), name='projects'),
+    path('category/<str:cats>/', views.CategoryView, name='category')
+    ]
