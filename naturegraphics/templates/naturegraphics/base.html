@@ -13,34 +13,44 @@
     {% block head %} {% endblock %}
 </head>
 <style>
-
+    a {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: large;
+    }
 </style>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark  bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark  bg-dark px-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'naturegraphics:index' %}">Nature Graphics</a>
+            <a class="fw-bold navbar-brand mx-3" href="{% url 'naturegraphics:index' %}">Nature Graphics</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0 fw-bold">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'naturegraphics:index' %}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">About</a>
-                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
-                        <ul class="dropdown-menu" data-bs-popper="static">
-                          <li><a class="dropdown-item" href="{% url 'naturegraphics:culturalhistory' %}">Cultural History</a></li>
-                          <li><a class="dropdown-item" href="{% url 'naturegraphics:naturalhistory' %}">Natural History</a></li>
-                          <li><a class="dropdown-item" href="{% url 'naturegraphics:parkinformation' %}">Park Information</a></li>
-                          <li><a class="dropdown-item" href="{% url 'naturegraphics:resourcemanagement' %}">Resource Management</a></li>
+                        <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown"
+                            aria-expanded="true">Projects</a>
+                        <ul class="dropdown-menu" data-popper="static">
+                            <li><a class="dropdown-item" href="{% url 'naturegraphics:culturalhistory' %}">Cultural
+                                    History</a></li>
+                            <li><a class="dropdown-item" href="{% url 'naturegraphics:naturalhistory' %}">Natural
+                                    History</a></li>
+                            <li><a class="dropdown-item" href="{% url 'naturegraphics:parkinformation' %}">Park
+                                    Information</a></li>
+                            <li><a class="dropdown-item" href="{% url 'naturegraphics:resourcemanagement' %}">Resource
+                                    Management</a></li>
                         </ul>
-                      </li>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto mb-2 mb-md-0 fw-bold">
+                    <li class="nav-item">
+                        <a class="nav-link active">(704) 880-8026</a>
+                    </li>
                 </ul>
             </div>
         </div>

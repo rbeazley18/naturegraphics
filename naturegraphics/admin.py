@@ -7,11 +7,11 @@ class ContactAdmin(admin.ModelAdmin):
 
 class Project1Admin(admin.ModelAdmin):
     list_display = ('category', 'description', 'project_image', 'order')
-    search_fields = ('title', 'description')
+    search_fields = ('category', 'description')
 
 class Project2Admin(admin.ModelAdmin):
     list_display = ('category', 'description', 'project_image', 'order')
-    search_fields = ('title', 'description')
+    search_fields = ('category', 'description')
 
 class Project3Admin(admin.ModelAdmin):
     list_display = ('category', 'description', 'project_image', 'order')
@@ -19,7 +19,7 @@ class Project3Admin(admin.ModelAdmin):
 
 class Project4Admin(admin.ModelAdmin):
     list_display = ('category', 'description', 'project_image', 'order')
-    search_fields = ('title', 'description')
+    search_fields = ('category', 'description')
 
 admin.site.register(Project1, Project1Admin)
 admin.site.register(Project2, Project2Admin)
