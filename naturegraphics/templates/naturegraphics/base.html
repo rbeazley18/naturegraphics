@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="static/naturegraphics/TrilliumColor.jpg">
     {% block head %} {% endblock %}
 </head>
 <style>
@@ -33,23 +34,19 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'naturegraphics:index' %}">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown"
-                            aria-expanded="true">Projects</a>
-                        <ul class="dropdown-menu" data-popper="static">
-                            <li><a class="dropdown-item" href="{% url 'naturegraphics:culturalhistory' %}">Cultural
-                                    History</a></li>
-                            <li><a class="dropdown-item" href="{% url 'naturegraphics:naturalhistory' %}">Natural
-                                    History</a></li>
-                            <li><a class="dropdown-item" href="{% url 'naturegraphics:parkinformation' %}">Park
-                                    Information</a></li>
-                            <li><a class="dropdown-item" href="{% url 'naturegraphics:resourcemanagement' %}">Resource
-                                    Management</a></li>
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" data-bs-target="#navbar"
+                            aria-expanded="true">Sample Designs</a> 
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'naturegraphics:culturalhistory' %}">Cultural History</a></li>
+                            <li><a class="dropdown-item" href="{% url 'naturegraphics:naturalhistory' %}">Natural History</a></li>
+                            <li><a class="dropdown-item" href="{% url 'naturegraphics:parkinformation' %}">Park Information</a></li>
+                            <li><a class="dropdown-item" href="{% url 'naturegraphics:resourcemanagement' %}">Resource Management</a></li>
                         </ul>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto mb-2 mb-md-0 fw-bold">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0 fw-bold">
                     <li class="nav-item">
-                        <a class="nav-link active">(704) 880-8026</a>
+                        <a class="nav-link active" href="#">(704) 880-8026</a>
                     </li>
                 </ul>
             </div>

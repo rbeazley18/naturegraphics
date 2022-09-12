@@ -10,6 +10,9 @@ class Project1(models.Model):
     def __str__(self):
         return self.category
 
+    class Meta:
+        verbose_name_plural = 'Cultural History'
+
 class Project2(models.Model):
     order = models.IntegerField(default='1')
     category = models.CharField(max_length=255, blank=True)
@@ -18,6 +21,9 @@ class Project2(models.Model):
 
     def __str__(self):
         return self.category
+
+    class Meta:
+        verbose_name_plural = 'Natural History'
 
 class Project3(models.Model):
     order = models.IntegerField(default='1')
@@ -28,6 +34,9 @@ class Project3(models.Model):
     def __str__(self):
         return self.category
 
+    class Meta:
+        verbose_name_plural = 'Park Information'
+
 class Project4(models.Model):
     order = models.IntegerField(default='1')
     category = models.CharField(max_length=255, blank=True)
@@ -36,6 +45,9 @@ class Project4(models.Model):
 
     def __str__(self):
         return self.category
+
+    class Meta:
+        verbose_name_plural = 'Resource Management'
 
 
 class Contact(models.Model):

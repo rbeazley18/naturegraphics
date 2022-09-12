@@ -9,13 +9,26 @@
 <style>
     .project-caption {
         background-color: rgb(156, 52, 52);
+        max-width: fit-content;
     }
 
     h1 {
         font-family: 'DM Serif Display', serif;
+        white-space: nowrap;
+
     }
 
-    
+    @media (min-width: 1800px) {
+        #gallery {
+            max-width: 60%;
+        }
+    }
+
+    img {
+        image-resolution: 300dpi;
+    }
+
+
     h4 {
         font-family: 'Nunito Sans', sans-serif;
     }
@@ -23,34 +36,37 @@
 
 
 <body>
-    <div class="col-lg-5 rounded-3 p-3 mt-5 mx-auto shadow-lg project-caption">
-        <h1 class="display-3 text-center  text-light">Resource Management</h1>
-    </div>
-    <div class="col-lg-7 p-0 mb-5 mt-5 mx-auto" >
-        <div id="carouselExampleFade" class="carousel slide carousel-fade"  data-bs-ride="carousel" data-bs-interval="60000">
-            <div class="carousel-inner border rounded-3 shadow-lg">
-                {% for project in project4 %}
-                {% if forloop.first %}
-                <div class="carousel-item active">
-                    <img src="{{ project.project_image.url }}" class="d-block w-100" alt="...">
+    <div class="container-fluid">
+        <div class="rounded-3 py-2 px-4 mt-5 mx-auto shadow-lg project-caption">
+            <h1 class="display-3 text-center  text-light">Resource Management</h1>
+        </div>
+        <div class="col-12 col-sm-11 col-md-11 col-lg-11 col-xl-10 col-xxl-9 p-0 mb-5 mt-lg-4 mt-2 mt-md-3 mx-auto" id="gallery">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                data-bs-interval="60000">
+                <div class="carousel-inner border rounded-3 shadow-lg">
+                    {% for project in project4 %}
+                    {% if forloop.first %}
+                    <div class="carousel-item active">
+                        <img src="{{ project.project_image.url }}" class="d-block w-100" alt="...">
+                    </div>
+                    {% else %}
+                    <div class="carousel-item">
+                        <img src="{{ project.project_image.url }}" class="d-block w-100" alt="...">
+                    </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                {% else %}
-                <div class="carousel-item">
-                    <img src="{{ project.project_image.url }}" class="d-block w-100" alt="...">
-                </div>
-                {% endif %}
-                {% endfor %}
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
 </body>

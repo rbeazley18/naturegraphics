@@ -15,21 +15,36 @@
         font-size: x-large;
     }
 
+
     h1 {
         color: rgb(255, 255, 255);
         font-family: 'DM Serif Display', serif;
         white-space: nowrap;
     }
 
-    @media (min-width: 991.98px) {
+    @media (min-width: 992px) {
         h1 {
             font-size: 60px;
         }
+        #header-description {
+            max-width: 80%;
+        }
     }
 
-    @media (max-width: 991.98px) {
+    @media (min-width: 1500px) {
         h1 {
-            font-size: 40px;
+            font-size: 70px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        h1 {
+            font-size: 45px;
+        }
+
+        #header-description {
+            font-size: 20px;
+            max-width: fit-content;
         }
     }
 
@@ -42,11 +57,7 @@
         font-family: 'Nunito Sans', sans-serif;
     }
 
-    .container-fluid {
-        padding-left: 0rem;
-        padding-right: 0rem;
-        overflow: hidden;
-    }
+
 
     .trillium {
         width: 6rem;
@@ -97,7 +108,7 @@
                     <h1 class=""><img class=" rounded-circle trillium"
                             src="{% static 'naturegraphics/TrilliumColor.jpg' %}">
                         Nature Graphics</h1>
-                    <p class="mt-sm-5 mb-4 lead" id="header-desription">Nature Graphics is a graphic design firm
+                    <p class="mt-sm-5 mb-4 lead" id="header-description">Nature Graphics is a graphic design firm
                         specializing in
                         the planning, writing,
                         design,
@@ -113,7 +124,7 @@
                         <button type="button" class="btn btn-light shadow-lg btn-lg px-4">Default</button>
                     </div>
                 </div>
-                <div class="col-11 col-md-8 col-sm-10 col-xxl-5 p-0 mb-1 mb-md-5 shadow-lg">
+                <div class="col-11 col-md-8 col-sm-10 col-xxl-5 p-0 mb-1 mb-md-5 shadow-lg ml-md-5">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
