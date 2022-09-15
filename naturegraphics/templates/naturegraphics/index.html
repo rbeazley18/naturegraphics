@@ -11,41 +11,16 @@
         background-color: rgb(156, 52, 52);
     }
 
-    #header-desription {
-        font-size: x-large;
-    }
 
-
-    h1 {
+    .title {
         color: rgb(255, 255, 255);
         font-family: 'DM Serif Display', serif;
         white-space: nowrap;
     }
 
-    @media (min-width: 992px) {
-        h1 {
-            font-size: 60px;
-        }
-        #header-description {
-            max-width: 80%;
-        }
-    }
-
-    @media (min-width: 1500px) {
-        h1 {
-            font-size: 70px;
-        }
-    }
-
-    @media (max-width: 992px) {
-        h1 {
-            font-size: 45px;
-        }
-
-        #header-description {
-            font-size: 20px;
-            max-width: fit-content;
-        }
+    h2 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 40px;
     }
 
     h3 {
@@ -57,6 +32,12 @@
         font-family: 'Nunito Sans', sans-serif;
     }
 
+    .btn {
+        font-family: 'Nunito Sans', sans-serif;
+        max-width: fit-content;
+        font-weight: 600;
+    }
+
 
 
     .trillium {
@@ -65,9 +46,72 @@
     }
 
     .profiles {
-        max-width: 80%;
-        height: auto;
-        min-width: 20rem;
+        border-radius: 50%;
+        height: 24rem;
+        width: 24rem;
+        overflow: hidden;
+    }
+
+
+    @media (min-width: 992px) {
+        .title {
+            font-size: 60px;
+        }
+
+        #header-description {
+            font-size: 26px;
+
+        }
+
+    }
+
+    @media (min-width: 1500px) {
+        .title {
+            font-size: 70px;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .headline-title {
+            text-align: center;
+            
+        }
+        .btn {
+            width: fit-content;
+            white-space: nowrap;
+            
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        .title {
+            font-size: 45px;  
+        }
+
+        .headline-title {
+            text-align: center
+        }
+
+        .btn {
+            width: fit-content;
+            font-size: 16px;
+            font-weight: 600;
+            white-space: nowrap;
+            
+        }
+
+        #header-description {
+            font-size: 20px;
+        }
+
+        
+
+        .profiles {
+            border-radius: 50%;
+            height: 22rem;
+            width: 22rem;
+            overflow: hidden;
+        }
     }
 
     @media (min-width: 992px) {
@@ -86,15 +130,17 @@
 
     @media (max-width: 575.98px) {
         .btn {
-            width: 8rem;
-            font-size: medium;
-            font-weight: 400;
+            width: fit-content;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
         }
 
         .profiles {
-            max-width: 60%;
-            height: auto;
-            min-width: 20rem;
+            border-radius: 50%;
+            height: 20rem;
+            width: 20rem;
+            overflow: hidden;
         }
     }
 </style>
@@ -102,26 +148,17 @@
 <body>
     <div>
         <div class="container-fluid" id="headline">
-            <div
-                class="row text-light pb-lg-0 pt-lg-5 px-lg-5 align-items-center px-xs-2 p-sm-3 justify-content-evenly mx-lg-auto">
-                <div class="col-11 col-sm-10 col-xxl-6 p-lg-5 pt-lg-3 p-3">
-                    <h1 class=""><img class=" rounded-circle trillium"
+            <div class="row text-light pb-lg-0 pt-lg-5 px-lg-5 align-items-center px-xs-2 p-sm-3 justify-content-evenly mx-lg-auto">
+                <div class="col-11 col-sm-10 col-xxl-6 p-lg-5 pt-lg-3 p-3 headline-title">
+                    <h1 class="title"><img class=" rounded-circle trillium"
                             src="{% static 'naturegraphics/TrilliumColor.jpg' %}">
                         Nature Graphics</h1>
-                    <p class="mt-sm-5 mb-4 lead" id="header-description">Nature Graphics is a graphic design firm
-                        specializing in
-                        the planning, writing,
-                        design,
-                        fabrication and installation of interpretive displays and wayfinding signage. Established in
-                        2003,
-                        we are experienced enough to handle the largest of wayside exhibit projects yet eager enough
-                        to
-                        welcome even the smallest projects.</p>
+                    <p class="mt-sm-5 mb-3 mb-sm-5" id="header-description">Specializing in interpretive displays and wayfinding signage.</p>
 
-                    <div class="d-grid gap-2 d-md-flex justify-content-start mb-4 mb-lg-3">
-                        <a type="button" class="btn btn-light btn-lg shadow-lg px-4 me-md-2"
+                    <div class="mb-4 mb-lg-3">
+                        <a type="button" class="btn btn-light btn-lg shadow-lg px-4 me-2"
                             href="{% url 'naturegraphics:contact' %}">Contact Us</a>
-                        <button type="button" class="btn btn-light shadow-lg btn-lg px-4">Default</button>
+                        <a type="button" class="btn btn-light shadow-lg btn-lg px-4" href="{% url 'naturegraphics:gallery' %}">Photo Gallery</a>
                     </div>
                 </div>
                 <div class="col-11 col-md-8 col-sm-10 col-xxl-5 p-0 mb-1 mb-md-5 shadow-lg ml-md-5">
@@ -133,19 +170,25 @@
                                 aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                                 aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
                         </div>
                         <div class="carousel-inner rounded-3">
                             <div class="carousel-item active">
-                                <img src="{% static 'naturegraphics/Cormorants2x3Panel-FOMA.jpg' %}"
+                                <img src="{% static 'naturegraphics/MOMI-Tower1PeaksDisplay.jpg' %}"
                                     class="img-fluid d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="{% static 'naturegraphics/GORG-CountyMapDisp.jpg' %}" class="d-block w-100"
+                                <img src="{% static 'naturegraphics/OKI_Estuaries.jpeg' %}" class="d-block w-100"
                                     alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="{% static 'naturegraphics/MesserTrailhead.jpg' %}" class="d-block w-100"
+                                <img src="{% static 'naturegraphics/PLC-Watersheds copy.jpg' %}" class="d-block w-100"
                                     alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'naturegraphics/Tri-foldMBAirForceBase.JPG' %}"
+                                    class="d-block w-100" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -163,6 +206,35 @@
             </div>
         </div>
         <div class="row justify-content-evenly p-lg-5">
+            <div class="col my-3 mx-3" style="min-width: 23rem; max-width: 30rem;">
+                <div class="h-100">
+                    <div class="text-center my-3">
+                        <img class="rounded-circle profiles" src="{% static 'naturegraphics/display2.webp' %}">
+                    </div>
+                    <div class="text-center mt-4">
+                        <h3 class="">About Us</h3>
+                        <p class="lead">Nature Graphics is a graphic design firm specializing in the planning, writing, design, fabrication and installation of interpretive displays and wayfinding signage. Established in 2003, we are experienced enough to handle the largest of wayside exhibit projects yet eager enough to welcome even the smallest projects.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col my-3 mx-3" style="min-width: 23rem; max-width: 30rem;">
+                <div class="h-100">
+                    <div class="text-center my-3">
+                        <img class="rounded-circle profiles"
+                            src="{% static 'naturegraphics/OKI-SimpeRailmount.jpeg' %}">
+                    </div>
+                    <div class="text-center mt-4">
+                        <div class="">
+                            <h3 class="">Our Mission</h3>
+                            <p class="lead">To create interpretive displays, wayfinding signage, and park information
+                                displays
+                                that are helpful, engaging, attractive, ADA-accessible, durable and affordable while
+                                giving
+                                all of our clients the personal attention they deserve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col my-3 mx-3" style="min-width: 23rem; max-width: 30rem;">
                 <div class="h-100">
                     <div class="text-center my-3">
@@ -184,44 +256,27 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col my-3 mx-3" style="min-width: 23rem; max-width: 30rem;">
-                <div class="h-100">
-                    <div class="text-center my-3">
-                        <img class="rounded-circle profiles" src="{% static 'naturegraphics/display2.webp' %}">
-                    </div>
-                    <div class="text-center mt-4">
-                        <div class="">
-                            <h3 class="">Our Mission</h3>
-                            <p class="lead">To create interpretive displays, wayfinding signage, and park information
-                                displays
-                                that are helpful, engaging, attractive, ADA-accessible, durable and affordable while
-                                giving
-                                all of our clients the personal attention they deserve.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col my-3 mx-3" style="min-width: 23rem; max-width: 30rem;">
-                <div class="h-100">
-                    <div class="text-center my-3">
-                        <img class="rounded-circle profiles" src="{% static 'naturegraphics/display2.webp' %}">
-                    </div>
-                    <div class="text-center mt-4">
-                        <div class="">
-                            <h3 class="">Our Mission</h3>
-                            <p class="lead">To create interpretive displays, wayfinding signage, and park information
-                                displays
-                                that are helpful, engaging, attractive, ADA-accessible, durable and affordable while
-                                giving
-                                all of our clients the personal attention they deserve.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
         </div>
-
+        <hr width="90%" class="mx-auto">
+        <div class="text-center mb-5">
+            <h2 class="p-1 mt-5 mb-3">News Articles</h2>
+            <p class="lead">
+                <a
+                    href="https://www.lakegastongazette-observer.com/leisure/article_ff27e82e-88c9-11eb-907f-af6326bccc93.html">The
+                    signs you see at parks, beaches and historical sites? They have a Lake Gaston tie. -Lake Gaston
+                    Gazette</a>
+            </p>
+            <p class="lead">
+                <a
+                    href="https://www.lakegastongazette-observer.com/opinion/article_875f5ae8-88ce-11eb-8bbe-a7a79c9398e8.html">Signs
+                    are more than the words that make them up -Lake Gaston Gazette</a>
+            </p>
+            <p class="lead">
+                <a
+                    href="https://www.wdef.com/louvin-brothers-marker-added-in-patten-square/">Louvin Brothers Marker Added in Patten Square -WDEF</a>
+        </div>
     </div>
 </body>
 {% endblock %}

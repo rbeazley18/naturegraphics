@@ -10,4 +10,6 @@ urlpatterns = [
     path('naturalhistory', views.Project2View.as_view(), name='naturalhistory'),
     path('parkinformation', views.Project3View.as_view(), name='parkinformation'),
     path('resourcemanagement', views.Project4View.as_view(), name='resourcemanagement'),
+    path('portfolio', views.PortfolioView.as_view(), name='portfolio'),
+    path('gallery', views.GalleryView.as_view(), name='gallery'),
 ]

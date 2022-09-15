@@ -1,0 +1,52 @@
+{% extends 'naturegraphics/base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Our Projects</title>
+{% endblock %}
+
+{% block body %}
+<style>
+    
+
+    h4 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-weight: bold;
+    }
+
+    h1 {
+        font-family: 'DM Serif Display', serif;
+        color: rgb(156, 52, 52);
+    }
+</style>
+
+<body>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <h1 class="display-4 text-center mb-5">Some of Our Projects</h1>
+            <div class="row g-4 justify-content-center">
+                {% for project in portfolio %}
+                <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+                    <div class="card shadow-sm rounded-3">
+                        {% if project.portfolio_image %}
+                        <div>
+                            <img src="{{ project.portfolio_image.url }}" class="card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                        </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <h4 class="text-center">{{ project.title }}</h4>
+                            <p class="card-text">{{ project.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+{% endblock %}

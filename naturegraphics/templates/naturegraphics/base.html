@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,14 +15,25 @@
     {% block head %} {% endblock %}
 </head>
 <style>
-    a {
+    .nav-link {
         font-family: 'Nunito Sans', sans-serif;
-        font-size: large;
+        font-size: 18px;
+    }
+
+    .navbar-brand {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 24px;
+    }
+
+    .socials {
+        width: auto;
+        height: 40px;
+        margin-right: 2px;
     }
 </style>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark  bg-dark px-3">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark px-3 py-1">
         <div class="container-fluid">
             <a class="fw-bold navbar-brand mx-3" href="{% url 'naturegraphics:index' %}">Nature Graphics</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -29,9 +41,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0 fw-bold">
+                <ul class="navbar-nav me-auto mb-1 mb-md-0 fw-bold">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'naturegraphics:index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'naturegraphics:portfolio' %}">Our Projects</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" data-bs-target="#navbar"
@@ -43,11 +58,19 @@
                             <li><a class="dropdown-item" href="{% url 'naturegraphics:resourcemanagement' %}">Resource Management</a></li>
                         </ul>
                     </li>
+                    
                 </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-md-0 fw-bold">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0 fw-bold align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">(704) 880-8026</a>
+                        <a class="nav-link" aria-current="page" href="https://www.facebook.com/NatureGraphicsLLC"><img src="{% static 'naturegraphics/f_logo_RGB-Blue_58.png' %}" class="socials" alt=""></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="https://www.facebook.com/NatureGraphicsLLC"><img src="{% static 'naturegraphics/LI-In-Bug.png' %}" class="socials" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active">(704) 880-8026</a>
+                    </li>
+                
                 </ul>
             </div>
         </div>

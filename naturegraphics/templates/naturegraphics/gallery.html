@@ -2,25 +2,26 @@
 {% load static %}
 
 {% block head %}
-<title>Park Information</title>
+<title>Photo Gallery</title>
 {% endblock %}
 
 {% block body %}
 <style>
+
     h1 {
         font-family: 'DM Serif Display', serif;
         white-space: nowrap;
         color: rgb(156, 52, 52);
     }
 
-    @media (min-width: 1800px) {
+    @media (min-width: 1400px) {
         #gallery {
-            max-width: 60%;
+            max-width: 50%;
         }
     }
 
     img {
-        image-resolution: 300dpi;
+        image-resolution: 300dpi;    
     }
 
 
@@ -33,20 +34,20 @@
 <body>
     <div class="container-fluid">
         <div class="rounded-3 py-2 px-4 mt-5">
-            <h1 class="display-3 text-center">Park Information</h1>
+            <h1 class="display-3 text-center">Photo Gallery</h1>
         </div>
         <div class="col-12 col-sm-11 col-md-11 col-lg-11 col-xl-10 col-xxl-9 p-0 mb-5 mt-lg-4 mt-2 mt-md-3 mx-auto" id="gallery">
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel"
                 data-bs-interval="60000">
                 <div class="carousel-inner border rounded-3 shadow-lg">
-                    {% for project in project3 %}
+                    {% for photo in gallery %}
                     {% if forloop.first %}
                     <div class="carousel-item active">
-                        <img src="{{ project.project_image.url }}" class="d-block w-100" alt="...">
+                        <img src="{{ photo.gallery_image.url }}" class="d-block w-100" preserveAspectRatio="xMidYMid slice" alt="...">
                     </div>
                     {% else %}
-                    <div class="carousel-item">
-                        <img src="{{ project.project_image.url }}" class="d-block w-100" alt="...">
+                    <div class="carousel-item" >
+                        <img src="{{ photo.gallery_image.url }}" class="d-block w-100" preserveAspectRatio="xMidYMid slice" alt="...">
                     </div>
                     {% endif %}
                     {% endfor %}
