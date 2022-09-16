@@ -138,8 +138,20 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CONTACT_EMAIL = 'robertbeazley18@gmail.com'
-ADMIN_EMAILS = ['robertbeazley18@gmail.com', ]
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = env('EMAIL_USER') 
+EMAIL_HOST_PASSWORD = env('EMAIL_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+ADMINS = [('Robert', EMAIL_HOST_USER)]
+MANAGERS = ADMINS
+
+
+CONTACT_EMAIL = 'naturegraphics@bellsouth.net'
+ADMIN_EMAILS = ['robertbeazley18@gmail.com', 'naturegraphics@bellsouth.net']
 
 # Twilio SendGrid
 EMAIL_HOST = 'smtp.sendgrid.net'
