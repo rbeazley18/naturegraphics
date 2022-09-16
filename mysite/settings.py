@@ -150,8 +150,8 @@ ADMINS = [('Robert', EMAIL_HOST_USER)]
 MANAGERS = ADMINS
 
 
-CONTACT_EMAIL = 'naturegraphics@bellsouth.net'
-ADMIN_EMAILS = ['robertbeazley18@gmail.com', 'naturegraphics@bellsouth.net']
+CONTACT_EMAIL = env('CONTACT_EMAIL')
+ADMIN_EMAILS = [env('ADMIN_EMAIL1'), env('ADMIN_EMAIL2')]
 
 # Twilio SendGrid
 EMAIL_HOST = 'smtp.sendgrid.net'
