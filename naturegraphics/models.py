@@ -11,7 +11,7 @@ class Portfolio(models.Model):
         return self.description
 
     class Meta:
-        verbose_name_plural = 'Portfolio'
+        verbose_name_plural = 'Our Projects'
 
 class Gallery(models.Model):
     order = models.IntegerField(default='1')
