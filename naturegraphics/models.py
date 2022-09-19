@@ -3,7 +3,7 @@ from django.db import models
 
 class Portfolio(models.Model):
     order = models.IntegerField(default='1')
-    title = models.CharField(max_length=255, blank=True)
+    title = models.CharField(max_length=255, blank=False, null=True, default='Title')
     description = models.TextField(blank=True)
     portfolio_image = models.ImageField(null=True, blank=True, upload_to='images/portfolio')
 
@@ -15,7 +15,7 @@ class Portfolio(models.Model):
 
 class Gallery(models.Model):
     order = models.IntegerField(default='1')
-    title = models.CharField(max_length=255, blank=True)
+    title = models.CharField(max_length=255, blank=False, null=True, default='Title')
     gallery_image = models.ImageField(null=True, blank=True, upload_to='images/gallery')
 
     def __str__(self):
@@ -26,7 +26,7 @@ class Gallery(models.Model):
 
 class Project1(models.Model):
     order = models.IntegerField(default='1')
-    category = models.CharField(max_length=255, blank=True)
+    category = models.CharField(max_length=255, blank=False, null=True, default='Category')
     description = models.CharField(max_length=255, blank=True)
     project_image = models.ImageField(null=True, blank=True, upload_to='images/project1')
 
@@ -38,7 +38,7 @@ class Project1(models.Model):
 
 class Project2(models.Model):
     order = models.IntegerField(default='1')
-    category = models.CharField(max_length=255, blank=True)
+    category = models.CharField(max_length=255, blank=False, null=True, default='Category')
     description = models.CharField(max_length=255, blank=True)
     project_image = models.ImageField(null=True, blank=True, upload_to='images/project2')
 
@@ -50,7 +50,7 @@ class Project2(models.Model):
 
 class Project3(models.Model):
     order = models.IntegerField(default='1')
-    category = models.CharField(max_length=255, blank=True)
+    category = models.CharField(max_length=255, blank=False, null=True, default='Category')
     description = models.CharField(max_length=255, blank=True)
     project_image = models.ImageField(null=True, blank=True, upload_to='images/project3')
 
@@ -62,7 +62,7 @@ class Project3(models.Model):
 
 class Project4(models.Model):
     order = models.IntegerField(default='1')
-    category = models.CharField(max_length=255, blank=True)
+    category = models.CharField(max_length=255, blank=False, null=True, default='Category')
     description = models.CharField(max_length=255, blank=True)
     project_image = models.ImageField(null=True, blank=True, upload_to='images/project4')
 

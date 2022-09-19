@@ -41,6 +41,7 @@
                 data-bs-interval="60000">
                 <div class="carousel-inner border rounded-3 shadow-lg">
                     {% for photo in gallery %}
+                    {% if photo.gallery_image %}
                     {% if forloop.first %}
                     <div class="carousel-item active">
                         <img src="{{ photo.gallery_image.url }}" class="d-block w-100" preserveAspectRatio="xMidYMid slice" alt="...">
@@ -49,6 +50,7 @@
                     <div class="carousel-item" >
                         <img src="{{ photo.gallery_image.url }}" class="d-block w-100" preserveAspectRatio="xMidYMid slice" alt="...">
                     </div>
+                    {% endif %}
                     {% endif %}
                     {% endfor %}
                 </div>
