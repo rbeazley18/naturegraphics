@@ -15,7 +15,7 @@
     .title {
         color: rgb(255, 255, 255);
         font-family: 'DM Serif Display', serif;
-        white-space: nowrap;
+        
     }
 
     h2 {
@@ -56,6 +56,7 @@
     @media (min-width: 992px) {
         .title {
             font-size: 60px;
+            
         }
 
         #header-description {
@@ -83,9 +84,12 @@
         }
     }
 
+    
+
     @media (max-width: 991.98px) {
         .title {
-            font-size: 45px;  
+            font-size: 45px;
+            white-space: nowrap;  
         }
 
         .headline-title {
@@ -136,11 +140,39 @@
             white-space: nowrap;
         }
 
+        .trillium {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        .headline-title {
+            text-align: center
+        }
+
+        .title {
+            font-size: 35px;  
+        }
+
         .profiles {
             border-radius: 50%;
             height: 20rem;
             width: 20rem;
             overflow: hidden;
+        }
+    }
+
+    @media screen and (max-device-width: 480px) and (orientation: portrait){
+        .headline-title {
+            text-align: center
+        }
+        .title {
+            font-size: 25px; 
+            white-space: nowrap; 
+        }
+        
+        .trillium {
+            width: 3rem;
+            height: 3rem;
         }
     }
 </style>
