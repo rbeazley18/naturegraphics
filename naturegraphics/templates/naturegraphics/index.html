@@ -15,7 +15,7 @@
     .title {
         color: rgb(255, 255, 255);
         font-family: 'DM Serif Display', serif;
-        
+        white-space: nowrap;
     }
 
     h2 {
@@ -25,11 +25,12 @@
 
     h3 {
         font-family: 'DM Serif Display', serif;
-        font-size: xx-large;
+        font-size: 40px;
     }
 
     p {
         font-family: 'Nunito Sans', sans-serif;
+        font-size: 20px;
     }
 
     .btn {
@@ -38,7 +39,9 @@
         font-weight: 600;
     }
 
-
+    .headline-title {
+        text-align: center
+    }
 
     .trillium {
         width: 6rem;
@@ -56,7 +59,7 @@
     @media (min-width: 992px) {
         .title {
             font-size: 60px;
-            
+
         }
 
         #header-description {
@@ -68,47 +71,47 @@
 
     @media (min-width: 1500px) {
         .title {
-            font-size: 70px;
+            font-size: 65px;
+        }
+
+        .headline-title {
+            text-align: left
         }
     }
 
     @media (max-width: 1200px) {
-        .headline-title {
-            text-align: center;
-            
-        }
         .btn {
             width: fit-content;
             white-space: nowrap;
-            
         }
+
     }
 
-    
+
+
+
 
     @media (max-width: 991.98px) {
         .title {
             font-size: 45px;
-            white-space: nowrap;  
+
         }
 
-        .headline-title {
-            text-align: center
-        }
+
 
         .btn {
             width: fit-content;
             font-size: 16px;
             font-weight: 600;
             white-space: nowrap;
-            
+
         }
 
         #header-description {
             font-size: 20px;
         }
 
-        
+
 
         .profiles {
             border-radius: 50%;
@@ -130,6 +133,8 @@
             width: 12rem;
             height: 12rem;
         }
+
+
     }
 
     @media (max-width: 575.98px) {
@@ -145,12 +150,10 @@
             height: 4rem;
         }
 
-        .headline-title {
-            text-align: center
-        }
+
 
         .title {
-            font-size: 35px;  
+            font-size: 35px;
         }
 
         .profiles {
@@ -163,21 +166,37 @@
         #header-description {
             font-size: 20px;
         }
+
+        h2 {
+            
+            font-size: 30px;
+        }
+
+        h3 {
+            
+            font-size: 30px;
+        }
+
+        p {
+            
+            font-size: 16px;
+        }
     }
 
-    @media screen and (max-device-width: 480px) and (orientation: portrait){
+    @media screen and (max-device-width: 480px) and (orientation: portrait) {
         .headline-title {
             text-align: center
         }
+
         .title {
-            font-size: 30px; 
-            white-space: nowrap; 
+            font-size: 30px;
         }
-        
+
         .trillium {
             width: 4rem;
             height: 4rem;
         }
+
         #header-description {
             font-size: 18px;
         }
@@ -187,20 +206,23 @@
 <body>
     <div>
         <div class="container-fluid" id="headline">
-            <div class="row text-light pb-lg-0 pt-lg-5 px-lg-5 align-items-center px-xs-2 p-sm-3 justify-content-evenly mx-lg-auto">
+            <div
+                class="row text-light pb-lg-0 pt-lg-5 px-lg-5 align-items-center justify-content-center px-xs-2 p-sm-3 ">
                 <div class="col-11 col-sm-10 col-xxl-6 p-lg-5 pt-lg-3 p-3 headline-title">
-                    <h1 class="title"><img class=" rounded-circle trillium"
+                    <h1 class="title"><img class="rounded-circle trillium"
                             src="{% static 'naturegraphics/TrilliumColor.jpg' %}">
                         Nature Graphics</h1>
-                    <p class="mt-sm-5 mb-3 mb-sm-5" id="header-description">Specializing in interpretive displays and wayfinding signage.</p>
+                    <p class="mt-sm-5 mb-3 mb-sm-5" id="header-description">Specializing in interpretive displays and
+                        wayfinding signage.</p>
 
                     <div class="mb-4 mb-lg-3">
                         <a type="button" class="btn btn-light btn-lg shadow-lg px-4 me-2"
                             href="{% url 'naturegraphics:contact' %}">Contact Us</a>
-                        <a type="button" class="btn btn-light shadow-lg btn-lg px-4" href="{% url 'naturegraphics:gallery' %}">Photo Gallery</a>
+                        <a type="button" class="btn btn-light shadow-lg btn-lg px-4"
+                            href="{% url 'naturegraphics:gallery' %}">Photo Gallery</a>
                     </div>
                 </div>
-                <div class="col-11 col-md-8 col-sm-10 col-xxl-5 p-0 mb-1 mb-md-5 shadow-lg ml-md-5">
+                <div class="col-11 col-md-8 col-sm-10 col-xxl-5 p-0 mb-1 mb-md-5 shadow-lg ml-sm-5">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
@@ -244,7 +266,7 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-evenly p-lg-5">
+        <div class="row justify-content-evenly p-md-5">
             <div class="col my-3 mx-3" style="min-width: 23rem; max-width: 30rem;">
                 <div class="h-100">
                     <div class="text-center my-3">
@@ -252,7 +274,10 @@
                     </div>
                     <div class="text-center mt-4">
                         <h3 class="">About Us</h3>
-                        <p class="lead">Nature Graphics is a graphic design firm specializing in the planning, writing, design, fabrication and installation of interpretive displays and wayfinding signage. Established in 2003, we are experienced enough to handle the largest of wayside exhibit projects yet eager enough to welcome even the smallest projects.</p>
+                        <p>Nature Graphics is a graphic design firm specializing in the planning, writing, design,
+                            fabrication and installation of interpretive displays and wayfinding signage. Established in
+                            2003, we are experienced enough to handle the largest of wayside exhibit projects yet eager
+                            enough to welcome even the smallest projects.</p>
                     </div>
                 </div>
             </div>
@@ -265,7 +290,7 @@
                     <div class="text-center mt-4">
                         <div class="">
                             <h3 class="">Our Mission</h3>
-                            <p class="lead">To create interpretive displays, wayfinding signage, and park information
+                            <p>To create interpretive displays, wayfinding signage, and park information
                                 displays
                                 that are helpful, engaging, attractive, ADA-accessible, durable and affordable while
                                 giving
@@ -282,7 +307,7 @@
                     <div class="text-center mt-4">
                         <div class="">
                             <h3 class="">The Owner</h3>
-                            <p class="lead">Lea Beazley understands first-hand the importance of effective
+                            <p>Lea Beazley understands first-hand the importance of effective
                                 interpretive
                                 displays in parks. Before starting her own company, she worked as a park ranger and
                                 district
@@ -295,26 +320,26 @@
                     </div>
                 </div>
             </div>
-            
+
 
         </div>
         <hr width="90%" class="mx-auto">
         <div class="text-center mb-5 p-2">
             <h2 class="p-1 mt-5 mb-3">News Articles</h2>
-            <p class="lead">
+            <p>
                 <a
                     href="https://www.lakegastongazette-observer.com/leisure/article_ff27e82e-88c9-11eb-907f-af6326bccc93.html">The
                     signs you see at parks, beaches and historical sites? They have a Lake Gaston tie. -Lake Gaston
                     Gazette</a>
             </p>
-            <p class="lead">
+            <p>
                 <a
                     href="https://www.lakegastongazette-observer.com/opinion/article_875f5ae8-88ce-11eb-8bbe-a7a79c9398e8.html">Signs
                     are more than the words that make them up -Lake Gaston Gazette</a>
             </p>
-            <p class="lead">
-                <a
-                    href="https://www.wdef.com/louvin-brothers-marker-added-in-patten-square/">Louvin Brothers Marker Added in Patten Square -WDEF</a>
+            <p>
+                <a href="https://www.wdef.com/louvin-brothers-marker-added-in-patten-square/">Louvin Brothers Marker
+                    Added in Patten Square -WDEF</a>
         </div>
     </div>
 </body>
