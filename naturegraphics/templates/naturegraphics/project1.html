@@ -34,6 +34,11 @@
             font-size: 35px;
         }
     }
+
+    .carousel-inner {
+        max-width: 1200px;
+        height: auto;
+    }
 </style>
 
 
@@ -46,7 +51,7 @@
             id="gallery">
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel"
                 data-bs-interval="60000">
-                <div class="carousel-inner border rounded-3 shadow-lg">
+                <div class="carousel-inner mx-auto border rounded-3 shadow-lg">
                     {% for project in project1 %}
                     {% if project.project_image %}
                     {% if forloop.first %}
