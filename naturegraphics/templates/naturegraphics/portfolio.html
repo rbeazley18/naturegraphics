@@ -16,14 +16,22 @@
 
     h1 {
         font-family: 'DM Serif Display', serif;
+        white-space: nowrap;
         color: rgb(156, 52, 52);
+        font-size: 50px;
+    }
+
+    @media (max-width: 575.98px) {
+        h1 {
+            font-size: 35px;
+        }
     }
 </style>
 
 <body>
     <div class="album py-5 bg-light">
         <div class="container">
-            <h1 class="display-4 text-center mb-5">Some of Our Projects</h1>
+            <h1 class="text-center mb-5">Some of Our Projects</h1>
             <div class="row g-4 justify-content-center">
                 {% for project in portfolio %}
                 <div class="col-11 col-sm-8 col-md-6 col-lg-4">
