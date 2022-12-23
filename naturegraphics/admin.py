@@ -23,7 +23,7 @@ class Project2Admin(admin.ModelAdmin):
 
 class Project3Admin(admin.ModelAdmin):
     list_display = ('category', 'alt_tag', 'project_image', 'order')
-    search_fields = ('title', 'alt_tag')
+    search_fields = ('category', 'alt_tag')
 
 class Project4Admin(admin.ModelAdmin):
     list_display = ('category', 'alt_tag', 'project_image', 'order')
