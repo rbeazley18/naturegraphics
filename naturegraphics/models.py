@@ -15,7 +15,7 @@ class Portfolio(models.Model):
 
 class Gallery(models.Model):
     order = models.IntegerField(default='1')
-    title = models.CharField(max_length=255, blank=False, null=True, default='Title')
+    alt_tag = models.CharField(max_length=255, blank=False, null=True, default='Alt Tag')
     gallery_image = models.ImageField(null=True, blank=True, upload_to='images/gallery')
 
     def __str__(self):
@@ -27,7 +27,7 @@ class Gallery(models.Model):
 class Project1(models.Model):
     order = models.IntegerField(default='1')
     category = models.CharField(max_length=255, blank=False, null=True, default='Category')
-    description = models.CharField(max_length=255, blank=True)
+    alt_tag = models.CharField(max_length=255, blank=True)
     project_image = models.ImageField(null=True, blank=True, upload_to='images/project1')
 
     def __str__(self):
@@ -39,7 +39,7 @@ class Project1(models.Model):
 class Project2(models.Model):
     order = models.IntegerField(default='1')
     category = models.CharField(max_length=255, blank=False, null=True, default='Category')
-    description = models.CharField(max_length=255, blank=True)
+    alt_tag = models.CharField(max_length=255, blank=True)
     project_image = models.ImageField(null=True, blank=True, upload_to='images/project2')
 
     def __str__(self):
@@ -51,7 +51,7 @@ class Project2(models.Model):
 class Project3(models.Model):
     order = models.IntegerField(default='1')
     category = models.CharField(max_length=255, blank=False, null=True, default='Category')
-    description = models.CharField(max_length=255, blank=True)
+    alt_tag = models.CharField(max_length=255, blank=True)
     project_image = models.ImageField(null=True, blank=True, upload_to='images/project3')
 
     def __str__(self):
@@ -63,7 +63,7 @@ class Project3(models.Model):
 class Project4(models.Model):
     order = models.IntegerField(default='1')
     category = models.CharField(max_length=255, blank=False, null=True, default='Category')
-    description = models.CharField(max_length=255, blank=True)
+    alt_tag = models.CharField(max_length=255, blank=True)
     project_image = models.ImageField(null=True, blank=True, upload_to='images/project4')
 
     def __str__(self):

@@ -10,24 +10,24 @@ class PortfolioAdmin(admin.ModelAdmin):
     search_fields = ('description',)
 
 class GalleryAdmin(admin.ModelAdmin):
-    list_display = ('title', 'gallery_image', 'order')
+    list_display = ('alt_tag', 'gallery_image', 'order')
     search_fields = ('title',)
 
 class Project1Admin(admin.ModelAdmin):
-    list_display = ('category', 'description', 'project_image', 'order')
-    search_fields = ('category', 'description')
+    list_display = ('category', 'alt_tag', 'project_image', 'order')
+    search_fields = ('category', 'alt_tag')
 
 class Project2Admin(admin.ModelAdmin):
-    list_display = ('category', 'description', 'project_image', 'order')
-    search_fields = ('category', 'description')
+    list_display = ('category', 'alt_tag', 'project_image', 'order')
+    search_fields = ('category', 'alt_tag')
 
 class Project3Admin(admin.ModelAdmin):
-    list_display = ('category', 'description', 'project_image', 'order')
-    search_fields = ('title', 'description')
+    list_display = ('category', 'alt_tag', 'project_image', 'order')
+    search_fields = ('title', 'alt_tag')
 
 class Project4Admin(admin.ModelAdmin):
-    list_display = ('category', 'description', 'project_image', 'order')
-    search_fields = ('category', 'description')
+    list_display = ('category', 'alt_tag', 'project_image', 'order')
+    search_fields = ('category', 'alt_tag')
 
 admin.site.register(Portfolio, PortfolioAdmin)
 admin.site.register(Gallery, GalleryAdmin)
