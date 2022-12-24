@@ -19,7 +19,7 @@ class Gallery(models.Model):
     gallery_image = models.ImageField(null=True, blank=True, upload_to='images/gallery')
 
     def __str__(self):
-        return self.title
+        return self.alt_tag
 
     class Meta:
         verbose_name_plural = 'Gallery'
