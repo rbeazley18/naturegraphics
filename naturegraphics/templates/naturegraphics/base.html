@@ -11,10 +11,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/banana-yeti" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="static/naturegraphics/TrilliumColor.jpg">
     {% block head %} {% endblock %}
 </head>
 <style>
+    :root {
+        --main-red-color: rgb(156, 52, 52);
+    }
+
     .nav-link {
         font-family: 'Nunito Sans', sans-serif;
         font-size: 18px;
@@ -23,6 +28,12 @@
     .navbar-brand {
         font-family: 'Nunito Sans', sans-serif;
         font-size: 24px;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: 'Banana Yeti', sans-serif;
     }
 
     .socials {
@@ -34,8 +45,6 @@
     .navbar {
         white-space: nowrap;
     }
-
-    
 </style>
 
 <body>
@@ -74,11 +83,13 @@
                 <ul class="navbar-nav mb-2 mb-md-0 fw-bold align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="https://www.facebook.com/NatureGraphicsLLC"><img
-                                src="{% static 'naturegraphics/f_logo_RGB-Blue_58.png' %}" class="socials"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Facebook"  alt=""></a>
+                                src="{% static 'naturegraphics/f_logo_RGB-Blue_58.png' %}" class="socials"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Facebook" alt=""></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="https://www.facebook.com/NatureGraphicsLLC"><img
-                                src="{% static 'naturegraphics/LI-In-Bug.png' %}" class="socials"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="LinkedIn" alt=""></a>
+                                src="{% static 'naturegraphics/LI-In-Bug.png' %}" class="socials"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="LinkedIn" alt=""></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active">(704) 880-8026</a>

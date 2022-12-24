@@ -15,18 +15,20 @@
 
     .title {
         color: rgb(255, 255, 255);
-        font-family: 'DM Serif Display', serif;
+        /* font-family: 'DM Serif Display', serif; */
         white-space: nowrap;
     }
 
     h2 {
-        font-family: 'DM Serif Display', serif;
-        font-size: 40px;
+        /* font-family: 'DM Serif Display', serif; */
+        font-size: 44px;
+        color: var(--main-red-color);
     }
 
     h3 {
-        font-family: 'DM Serif Display', serif;
-        font-size: 40px;
+        /* font-family: 'DM Serif Display', serif; */
+        font-size: 44px;
+        color: var(--main-red-color);
     }
 
     p {
@@ -47,7 +49,8 @@
     .trillium {
         width: 6rem;
         height: 6rem;
-        
+        margin-right: 10px;
+
     }
 
     .profiles {
@@ -57,29 +60,24 @@
         overflow: hidden;
     }
 
-    .jumbotron, .bubbles {
+    .jumbotron,
+    .bubbles {
         max-width: 2000px;
     }
 
 
     @media (min-width: 992px) {
         .title {
-            font-size: 60px;
-
+            font-size: 68px;
         }
 
         #header-description {
             font-size: 26px;
-
         }
 
     }
 
     @media (min-width: 1500px) {
-        .title {
-            font-size: 65px;
-        }
-
         .headline-title {
             text-align: left
         }
@@ -95,7 +93,7 @@
 
     @media (max-width: 991.98px) {
         .title {
-            font-size: 45px;
+            font-size: 52px;
 
         }
 
@@ -132,8 +130,8 @@
 
     @media (min-width: 1600px) {
         .trillium {
-            width: 12rem;
-            height: 12rem;
+            width: 10rem;
+            height: 10rem;
         }
     }
 
@@ -151,7 +149,7 @@
         }
 
         .title {
-            font-size: 35px;
+            font-size: 42px;
         }
 
         .profiles {
@@ -166,28 +164,28 @@
         }
 
         h2 {
-            
+
             font-size: 30px;
         }
 
         h3 {
-            
+
             font-size: 30px;
         }
 
         p {
-            
+
             font-size: 16px;
         }
     }
 
-    @media screen and (max-device-width: 480px) and (orientation: portrait) {
+    @media screen and (max-width: 360px) and (orientation: portrait) {
         .headline-title {
             text-align: center
         }
 
         .title {
-            font-size: 30px;
+            font-size: 34px;
         }
 
         .trillium {
