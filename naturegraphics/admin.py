@@ -11,7 +11,7 @@ class PortfolioAdmin(admin.ModelAdmin):
 
 class GalleryAdmin(admin.ModelAdmin):
     list_display = ('alt_tag', 'gallery_image', 'order')
-    search_fields = ('title',)
+    search_fields = ('alt_tag',)
 
 class Project1Admin(admin.ModelAdmin):
     list_display = ('category', 'alt_tag', 'project_image', 'order')
