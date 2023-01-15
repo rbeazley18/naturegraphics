@@ -40,6 +40,8 @@ SESSION_COOKIE_SECURE = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
 
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+
 
 ALLOWED_HOSTS = ['naturegraphics.herokuapp.com']
 
@@ -54,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'naturegraphics',
+    'captcha',
     'storages'
 ]
 
