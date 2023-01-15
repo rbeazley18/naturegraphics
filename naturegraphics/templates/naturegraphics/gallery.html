@@ -8,24 +8,12 @@
 
 {% block body %}
 <style>
-
     h1 {
         /* font-family: 'DM Serif Display', serif; */
         white-space: nowrap;
         color: rgb(156, 52, 52);
     }
-
-    #gallery {
-        max-width: 1200px;
-        max-height: 1600px;
-    }
-
-    img {
-        image-resolution: 300dpi;
-            
-    }
-
-
+    
     h4 {
         font-family: 'Nunito Sans', sans-serif;
     }
@@ -33,38 +21,40 @@
 
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid p-2">
         <div class="rounded-3 py-2 px-4 mt-5">
             <h1 class="display-3 text-center">Photo Gallery</h1>
         </div>
-        <div class="col-12 col-sm-11 col-md-11 col-lg-11 col-xl-10 col-xxl-9 p-0 mb-5 mt-lg-4 mt-2 mt-md-3 mx-auto" id="gallery">
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel"
-                data-bs-interval="60000">
-                <div class="carousel-inner border rounded-3 shadow-lg">
-                    {% for photo in gallery %}
-                    {% if photo.gallery_image %}
-                    {% if forloop.first %}
-                    <div class="carousel-item active">
-                        <img src="{{ photo.gallery_image.url }}" alt="{{ photo.alt_tag }}" class="d-block w-100" preserveAspectRatio="xMidYMid slice" alt="...">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-11 col-md-11 col-lg-11 col-xl-10 col-xxl-9 mb-5 mt-lg-4 mt-2 mt-md-3" id="gallery">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade mx-auto" data-bs-ride="carousel"
+                    data-bs-interval="60000">
+                    <div class="carousel-inner border rounded-3 shadow-lg">
+                        {% for photo in gallery %}
+                        {% if photo.gallery_image %}
+                        {% if forloop.first %}
+                        <div class="carousel-item active">
+                            <img src="{{ photo.gallery_image.url }}" alt="{{ photo.alt_tag }}" class="d-block w-100">
+                        </div>
+                        {% else %}
+                        <div class="carousel-item">
+                            <img src="{{ photo.gallery_image.url }}" alt="{{ photo.alt_tag }}" class="d-block w-100">
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
                     </div>
-                    {% else %}
-                    <div class="carousel-item" >
-                        <img src="{{ photo.gallery_image.url }}" alt="{{ photo.alt_tag }}" class="d-block w-100" preserveAspectRatio="xMidYMid slice" alt="...">
-                    </div>
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
     </div>
